@@ -1,5 +1,3 @@
-
-var compression = require('compression');
 var helmet = require('helmet');
 
 const express = require('express');
