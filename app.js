@@ -1,4 +1,4 @@
-var catalogRouter = require('./routes/catalog'); //Import routes for "catalog" area of site
+
 var compression = require('compression');
 var helmet = require('helmet');
 
@@ -18,6 +18,5 @@ app.use(helmet());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routes);
 app.use(express.static('public'));
-app.use('/catalog', catalogRouter);  // Add catalog routes to middleware chain.
 
 module.exports = app;
