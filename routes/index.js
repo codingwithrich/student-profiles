@@ -6,7 +6,7 @@ const path = require('path');
 const auth = require('http-auth');
 const basic = auth.basic({file: path.join(__dirname, '../users.htpasswd')})
 const router = express.Router();
-const Registration = mongoose.model('Registration');
+const Registration = mongoose.model('registrations');
 
 module.exports = router;
 
