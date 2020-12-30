@@ -17,113 +17,123 @@ html.loading(lang='en' data-textdirection='ltr')
         link(rel='stylesheet' type='text/css' href='../theme-assets/css/app-lite.css')
         link(rel='stylesheet' type='text/css' href='../theme-assets/css/core/menu/menu-types/vertical-menu.css')
         link(rel='stylesheet' type='text/css' href='../theme-assets/css/core/colors/palette-gradient.css')
+    body.vertical-layout.vertical-menu.2-columns.menu-expanded.fixed-navbar(data-open='click' data-menu='vertical-menu' data-color='bg-gradient-x-purple-blue' data-col='2-columns')
+    // fixed-top
+    nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-light
+        .navbar-wrapper
+            .navbar-container.content
+                #navbar-mobile.collapse.navbar-collapse.show
+                    ul.nav.navbar-nav.mr-auto.float-left
+                        li.nav-item.d-block.d-md-none
+                            a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+                                i.ft-menu
+                        li.nav-item.d-none.d-md-block
+                            a.nav-link.nav-link-expand(href='#')
+                                i.ficon.ft-maximize
+                        li.nav-item.dropdown.navbar-search
+                            a.nav-link.dropdown-toggle.hide(data-toggle='dropdown' href='#')
+                                i.ficon.ft-search
+                            ul.dropdown-menu
+                                li.arrow_box
+                                    form
+                                        .input-group.search-box
+                                            .position-relative.has-icon-right.full-width
+                                                input#search.form-control(type='text' placeholder='Search here...')
+                                                .form-control-position.navbar-search-close
+                                                    i.ft-x    
+                    ul.nav.navbar-nav.float-right
+                        //- li.dropdown.dropdown-notification.nav-item
+                        //-     a.nav-link.nav-link-label(href='#' data-toggle='dropdown')
+                        //-         i.ficon.ft-mail              
+                        //-     .dropdown-menu.dropdown-menu-right
+                        //-         .arrow_box_right
+                        //-             a.dropdown-item(href='#')
+                        //-                 i.ft-book
+                        //-                 |  Read Mail
+                        //-             a.dropdown-item(href='#')
+                        //-                 i.ft-bookmark
+                        //-                 |  Read Later
+                        //-             a.dropdown-item(href='#')
+                        //-                 i.ft-check-square
+                        //-                 |  Mark all Read
+                        li.dropdown.dropdown-user.nav-item
+                            a.dropdown-toggle.nav-link.dropdown-user-link(href='#' data-toggle='dropdown')
+                                span.avatar.avatar-online
+                                    img(src='../theme-assets/images/portrait/small/avatar-s-19.png' alt='avatar')
+                                    i
+                            .dropdown-menu.dropdown-menu-right
+                                .arrow_box_right
+                                    a.dropdown-item(href='#')
+                                        span.avatar.avatar-online
+                                            img(src='../theme-assets/images/portrait/small/avatar-s-19.png' alt='avatar')
+                                            span.user-name.text-bold-700.ml-1 John Doe
+                                    .dropdown-divider
+                                    a.dropdown-item(href='#')
+                                        i.ft-user
+                                        |  Edit Profile
+                                    //- a.dropdown-item(href='#')
+                                    //-     i.ft-mail
+                                    //-     |  My Inbox
+                                    //- a.dropdown-item(href='#')
+                                    //-     i.ft-check-square
+                                    //-     |  Task
+                                    //- a.dropdown-item(href='#')
+                                    //-     i.ft-message-square
+                                    //-     |  Chats
+                                    .dropdown-divider
+                                    a.dropdown-item(href='#')
+                                        i.ft-power
+                                        |  Logout
+    // ////////////////////////////////////////////////////////////////////////////
+    .main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true' data-img='../theme-assets/images/backgrounds/02.jpg')
+        .navbar-header
+            ul.nav.navbar-nav.flex-row
+                li.nav-item.mr-auto
+                    a.navbar-brand(href='index.html')
 
-body.vertical-layout.vertical-menu.2-columns.menu-expanded.fixed-navbar(data-open='click' data-menu='vertical-menu' data-color='bg-gradient-x-purple-blue' data-col='2-columns')
-// fixed-top
-nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-light
-    .navbar-wrapper
-        .navbar-container.content
-            #navbar-mobile.collapse.navbar-collapse.show
-                ul.nav.navbar-nav.mr-auto.float-left
-                    li.nav-item.d-block.d-md-none
-                        a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
-                        i.ft-menu
-                    li.nav-item.d-none.d-md-block
-                        a.nav-link.nav-link-expand(href='#')
-                        i.ficon.ft-maximize
-                ul.nav.navbar-nav.float-right
-                    //- li.dropdown.dropdown-notification.nav-item
-                    //-     a.nav-link.nav-link-label(href='#' data-toggle='dropdown')
-                    //-         i.ficon.ft-mail              
-                    //-     .dropdown-menu.dropdown-menu-right
-                    //-         .arrow_box_right
-                    //-             a.dropdown-item(href='#')
-                    //-                 i.ft-book
-                    //-                 |  Read Mail
-                    //-             a.dropdown-item(href='#')
-                    //-                 i.ft-bookmark
-                    //-                 |  Read Later
-                    //-             a.dropdown-item(href='#')
-                    //-                 i.ft-check-square
-                    //-                 |  Mark all Read
-                    li.dropdown.dropdown-user.nav-item
-                        a.dropdown-toggle.nav-link.dropdown-user-link(href='#' data-toggle='dropdown')
-                            span.avatar.avatar-online
-                                img(src='../theme-assets/images/portrait/small/avatar-s-19.png' alt='avatar')
-                                i
-                        .dropdown-menu.dropdown-menu-right
-                            .arrow_box_right
-                                a.dropdown-item(href='#')
-                                    span.avatar.avatar-online
-                                        img(src='../theme-assets/images/portrait/small/avatar-s-19.png' alt='avatar')
-                                        span.user-name.text-bold-700.ml-1 John Doe
-                                .dropdown-divider
-                                a.dropdown-item(href='#')
-                                    i.ft-user
-                                    |  Edit Profile
-                                //- a.dropdown-item(href='#')
-                                //-     i.ft-mail
-                                //-     |  My Inbox
-                                //- a.dropdown-item(href='#')
-                                //-     i.ft-check-square
-                                //-     |  Task
-                                //- a.dropdown-item(href='#')
-                                //-     i.ft-message-square
-                                //-     |  Chats
-                                .dropdown-divider
-                                a.dropdown-item(href='#')
-                                    i.ft-power
-                                    |  Logout
-// ////////////////////////////////////////////////////////////////////////////
-.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true' data-img='../theme-assets/images/backgrounds/02.jpg')
-    .navbar-header
-        ul.nav.navbar-nav.flex-row
-            li.nav-item.mr-auto
-                a.navbar-brand(href='index.html')
-                    
-                    img.brand-logo(alt='Catto admin logo' src='../theme-assets/images/logo/cat-logo.png')
-                    h3.brand-text  Catto - LTA
-            li.nav-item.d-md-none
-                a.nav-link.close-navbar
-                    i.ft-x
-    .main-menu-content
-        ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
-            li.nav-item
-                a(href='index.html')
-                    i.ft-home
-                    span.menu-title(data-i18n='') Dashboard
-            li.nav-item
-                a(href='charts.html')
-                    i.ft-pie-chart
-                    span.menu-title(data-i18n='') Charts
-            li.nav-item
-                a(href='icons.html')
-                    i.ft-droplet
-                    span.menu-title(data-i18n='') Icons
-            li.nav-item
-                a(href='cards.html')
-                    i.ft-layers
-                    span.menu-title(data-i18n='') Cards
-            li.nav-item
-                a(href='buttons.html')
-                    i.ft-box
-                    span.menu-title(data-i18n='') Buttons
-            li.nav-item
-                a(href='typography.html')
-                    i.ft-bold
-                    span.menu-title(data-i18n='') Typography
-            li.nav-item
-                a(href='tables.html')
-                    i.ft-credit-card
-                    span.menu-title(data-i18n='') Tables
-            li.active
-                a(href='form-elements.html')
-                    i.ft-layout
-                    span.menu-title(data-i18n='') Form Elements
-            li.nav-item
-                a(href='https://themeselection.com/demo/chameleon-admin-template/documentation')
-                    i.ft-book
-                    span.menu-title(data-i18n='') Documentation
-    .navigation-background
+                        img.brand-logo(alt='Catto admin logo' src='../theme-assets/images/logo/cat-logo.png')
+                        h3.brand-text  Catto - LTA
+                li.nav-item.d-md-none
+                    a.nav-link.close-navbar
+                        i.ft-x
+        .main-menu-content
+            ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+                li.nav-item
+                    a(href='index.html')
+                        i.ft-home
+                        span.menu-title(data-i18n='') Dashboard
+                li.nav-item
+                    a(href='charts.html')
+                        i.ft-pie-chart
+                        span.menu-title(data-i18n='') Charts
+                li.nav-item
+                    a(href='icons.html')
+                        i.ft-droplet
+                        span.menu-title(data-i18n='') Icons
+                li.nav-item
+                    a(href='cards.html')
+                        i.ft-layers
+                        span.menu-title(data-i18n='') Cards
+                li.nav-item
+                    a(href='buttons.html')
+                        i.ft-box
+                        span.menu-title(data-i18n='') Buttons
+                li.nav-item
+                    a(href='typography.html')
+                        i.ft-bold
+                        span.menu-title(data-i18n='') Typography
+                li.nav-item
+                    a(href='tables.html')
+                        i.ft-credit-card
+                        span.menu-title(data-i18n='') Tables
+                li.active
+                    a(href='form-elements.html')
+                        i.ft-layout
+                        span.menu-title(data-i18n='') Form Elements
+                li.nav-item
+                    a(href='https://themeselection.com/demo/chameleon-admin-template/documentation')
+                        i.ft-book
+                        span.menu-title(data-i18n='') Documentation
+        .navigation-background
 
 block body-content
