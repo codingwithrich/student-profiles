@@ -3,7 +3,7 @@ include mixins.pug
 block body-content
     +headerTitle('STUDENT PROFILES')
         .content-body.row.justify-content-md-center
-            .col-6
+            .col-xs-6.col-md-8
                 .card
                     .card-content.text-center
                         .card-body
@@ -12,63 +12,64 @@ block body-content
                     .card-body
                         form.form
                             .form-body.row
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p First Name
                                     input#fname.form-control(type='text' name='fname')
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p Middle Name
                                     input#mname.form-control(type='text' name='mname')
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p Last Name
                                     input#lname.form-control(type='text' name='lname')
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p Nickname
                                     input#nickname.form-control(type='text' name='nickname')
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p Birthday
                                     input#birthday.form-control(type='date' name='birthday')
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p Gender
                                     select#gender.form-control
                                         option -
                                         option Male
                                         option Female
-                                .form-group.col-sm-8
+                                .form-group.col-xs-6.col-md-8
                                     p Address
                                     input#address.form-control(type='text' name='address')
-                                .form-group.col-sm-4
+                                .form-group.col-xs-6.col-md-4
                                     p Contact Number
                                     input#contactnumber.form-control(type='text' placeholder='ex. 09198765432' name='contact-number')
                             .form-body-solid
                                 .row
                                     //- Father's Information
-                                    .form-group.col-sm-6
+                                    .form-group.col-xs-6.col-md-6
                                         p Father's Name
                                         input#father.form-control(type='text' name='father')
-                                    .form-group.col-sm-6
+                                    .form-group.col-xs-6.col-md-6
                                         p E-mail
                                         input#f-email.form-control(type='email' name='f-email')
-                                    .form-group.col-sm-8
+                                    .form-group.col-xs-6.col-md-8
                                         p Address
                                         input#faddress.form-control(type='text' name='f-address')
-                                    .form-group.col-sm-4
-                                        p Contact Number
-                                        input#fcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='f-contact-number')
-                                    //- Mother's Information
+                                    .form-group.col-xs-6.col-md-4
+                                            p Contact Number
+                                            input#fcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='f-contact-number')
+                                       
                             .form-body-solid
                                 .row
-                                    .form-group.col-sm-6
-                                        p Mother's Name
-                                        input#mother.form-control(type='text' name='mother')
-                                    .form-group.col-sm-6
-                                        p E-mail
-                                        input#m-email.form-control(type='email' name='m-email')
-                                    .form-group.col-sm-8
-                                        p Address
-                                        input#maddress.form-control(type='text' name='m-address')
-                                    .form-group.col-sm-4
-                                        p Contact Number
-                                        input#mcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='m-contact-number')
+                                    //- Mother's Information
+                                    .form-group.col-xs-6.col-md-6
+                                            p Mother's Name
+                                            input#mother.form-control(type='text' name='mother')
+                                    .form-group.col-xs-6.col-md-6
+                                            p E-mail
+                                            input#m-email.form-control(type='email' name='m-email')
+                                    .form-group.col-xs-6.col-md-8
+                                            p Address
+                                            input#maddress.form-control(type='text' name='m-address')
+                                    .form-group.col-xs-6.col-md-4
+                                            p Contact Number
+                                            input#mcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='m-contact-number')
                             .form-actions.center
                                 button.btn.btn-outline-primary(type='submit') Send
     +footer
