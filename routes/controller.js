@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Registration = mongoose.model('registrations');
+const StudentProfiles = mongoose.model('studentProfiles');
 
 const { check, validationResult } = require('express-validator');
 
@@ -57,12 +58,38 @@ function getRegistrationList(req, res) {
         .catch(() => { res.send('Sorry! Something when wrong.') })
 }
 
-router.get('/student-profile/form', validate, (req, res) => {
+router.get('/student-profile/form', (req, res) => {
     res.render('student-profile-form')
 });
 
 router.post('/student-profile/form', (req,res) => {
+    console.log("Request Body:" + req.body);
+    const errors = validationResult(req);
 
+    if (errors.isEmpty()) {
+        const student = new StudentProfiles(req.body);
+        console.log("Student:" + student);
+        student.save().then(() => {
+            res.send("Thank you! Bye.");
+        }).catch((err) => {
+            console.log(err);
+            res.send('Sorry! Something went wrong.')
+        });
+    } else {
+        res.render('form', {
+            title: 'Student Profile Form',
+            errors: errors.array(),
+            data: req.body
+        });
+    }
+});
+
+router.get('/student-profile', (req, res) => {
+    StudentProfiles.find()
+    .then((students) => {
+        res.render('student-profiles', { title: 'Listing students', students });
+    })
+    .catch(() => { res.send('Sorry! Something when wrong.') })
 });
 
 router.get('/form-elements', (req, res) => {

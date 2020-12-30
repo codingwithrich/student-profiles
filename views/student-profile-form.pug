@@ -1,6 +1,11 @@
 extends header
 include mixins.pug
 block body-content
+    -data = data || {}
+    if errors
+        ul
+        for error in errors
+            li= error.msg
     +headerTitle('STUDENT PROFILES')
         .content-body.row.justify-content-md-center
             .col-xs-6.col-md-8
@@ -10,17 +15,17 @@ block body-content
                             h2.card Student Profile Form
                             h6.card-subtitle.text-muted Please enter the following information
                     .card-body
-                        form.form
+                        form(action="/student-profile/form" method="POST").form
                             .form-body.row
                                 .form-group.col-xs-6.col-md-4
                                     p First Name
-                                    input#fname.form-control(type='text' name='fname' required='required')
+                                    input#first_name.form-control(type='text' name='first_name' required='required' value=data.first_name)
                                 .form-group.col-xs-6.col-md-4
                                     p Middle Name
-                                    input#mname.form-control(type='text' name='mname' required='required')
+                                    input#middle_name.form-control(type='text' name='middle_name' required='required' value=data.middle_name)
                                 .form-group.col-xs-6.col-md-4
                                     p Last Name
-                                    input#lname.form-control(type='text' name='lname' required='required')
+                                    input#last_name.form-control(type='text' name='last_name' required='required' value=data.last_name)
                                 .form-group.col-xs-6.col-md-4
                                     p Nickname
                                     input#nickname.form-control(type='text' name='nickname')
@@ -54,7 +59,6 @@ block body-content
                                     .form-group.col-xs-6.col-md-4
                                             p Contact Number
                                             input#fcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='f-contact-number')
-                                       
                             .form-body-solid
                                 .row
                                     //- Mother's Information
@@ -71,5 +75,5 @@ block body-content
                                             p Contact Number
                                             input#mcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='m-contact-number')
                             .form-actions.center
-                                button.btn.btn-outline-primary(type='submit') Send
+                                button.btn.btn-outline-primary(type='submit') Submit
     +footer

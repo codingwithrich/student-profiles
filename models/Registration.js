@@ -11,4 +11,20 @@ const registrationSchema = new mongoose.Schema({
     }
 });
 
+const studentProfileSchema = new mongoose.Schema({
+    first_name: {
+        type: String,
+        trim: true
+    },
+    middle_name: {
+        type: String,
+        trim: true
+    },
+    last_name: {    
+        type: String,
+        trim: true
+    }
+});
+
 module.exports = mongoose.model('registrations', registrationSchema);
+module.exports = mongoose.model('studentProfiles', studentProfileSchema);
