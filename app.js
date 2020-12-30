@@ -3,7 +3,7 @@ var helmet = require('helmet');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const routes = require('./routes/index');
+const routes = require('./routes/controller');
 const compression = require('compression');
 
 const app = express();

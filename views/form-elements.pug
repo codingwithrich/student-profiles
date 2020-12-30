@@ -1,0 +1,209 @@
+extends header
+include mixins.pug
+block body-content
+  +headerTitle('Form Elements')
+    .content-body
+      .col-xl-6.col-md-12
+        .card.text-center
+          .card-content
+            .card-body
+              h4.card-title Contact Form
+              h6.card-subtitle.text-muted Support card subtitle
+          .card-body
+            form.form
+              .form-body
+                .form-group
+                  label.sr-only(for='donationinput1') First Name
+                  input#donationinput1.form-control(type='text' placeholder='First Name' name='fname')
+                .form-group
+                  label.sr-only(for='donationinput2') Last Name
+                  input#donationinput2.form-control(type='text' placeholder='Last Name' name='lanme')
+                .form-group
+                  label.sr-only(for='donationinput3') E-mail
+                  input#donationinput3.form-control(type='email' placeholder='E-mail' name='email')
+                .form-group
+                  label.sr-only(for='donationinput4') Contact Number
+                  input#donationinput4.form-control(type='text' placeholder='Phone' name='phone')
+                .form-group
+                  label.sr-only(for='donationinput7') Message
+                  textarea#donationinput7.form-control.square(rows='5' name='message' placeholder='message')
+              .form-actions.center
+                button.btn.btn-outline-primary(type='submit') Send
+      // Basic Inputs start
+      section.basic-inputs
+        .row.match-height
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Basic Input
+              .card-block
+                .card-body
+                  fieldset.form-group
+                    input#basicInput.form-control(type='text')
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Password
+              .card-block
+                .card-body
+                  fieldset.form-group
+                    input#passwordField.form-control(type='password')
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title With Placeholder
+              .card-block
+                .card-body
+                  fieldset.form-group
+                    input#placeholderInput.form-control(type='email' placeholder='Enter Email Address')
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Disabled Input
+              .card-block
+                .card-body
+                  p
+                    | Add 
+                    code disabled
+                    |  attribute to disable input field.
+                  fieldset.form-group
+                    input#disabledInput.form-control(type='text' disabled='')
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Readonly Input
+              .card-block
+                .card-body
+                  p
+                    | Add 
+                    code readonly="readonly"
+                    |  attribute to set field readonly.
+                  fieldset.form-group
+                    input#readonlyInput.form-control(type='text' readonly='readonly' value="You can't change me. ;)")
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Predefined Value
+              .card-block
+                .card-body
+                  p
+                    | Add 
+                    code value="VALUE"
+                    |  attribute to set predefined value.
+                  fieldset.form-group
+                    input#predefinedInput.form-control(type='text' value='http://')
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Static Text
+              .card-block
+                .card-body
+                  fieldset.form-group
+                    p#staticInput.form-control-static email@themeselection.com
+                    p
+                      | To set static text use 
+                      code .form-control-static
+                      |  class.
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Input text with help
+              .card-block
+                .card-body
+                  fieldset.form-group
+                    small.text-muted
+                      | eg.
+                      i someone@example.com
+                    input#helpInputTop.form-control(type='text')
+          .col-xl-4.col-lg-6.col-md-12
+            .card
+              .card-header
+                label.card-title(for='helpInput') Input with Help
+              .card-block
+                .card-body
+                  fieldset.form-group
+                    input#helpInput.form-control(type='text' placeholder='With Help Text')
+                  p.text-muted
+                    | Muted help text using 
+                    code .text-muted
+                    |  class.
+      // Basic Inputs end
+      section.textarea-select
+        // Textarea start
+        .row
+          .col-12.mt-3.mb-1
+            h4.text-uppercase Textarea & Select
+            p Textual form controls—like  class. Included are styles for general appearance, focus state, sizing, and more.
+        .row.match-height
+          .col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Textarea
+              .card-block
+                .card-body
+                  h5.mt-2 Basic Textarea
+                  fieldset.form-group
+                    textarea#basicTextarea.form-control(rows='3')
+                  h5.mt-2 Textarea with Placeholder
+                  fieldset.form-group
+                    textarea#placeTextarea.form-control(rows='3' placeholder='Simple Textarea')
+                  h5.mt-2 Textarea with Description
+                  fieldset.form-group
+                    p.text-muted Textarea description text.
+                    textarea#descTextarea.form-control(rows='3' placeholder='Textarea with description')
+          .col-lg-6.col-md-12
+            .card
+              .card-header
+                h4.card-title Select
+              .card-block
+                .card-body
+                  h5.mt-2 Basic Select
+                  fieldset.form-group
+                    select#basicSelect.form-control
+                      option Select Option
+                      option Option 1
+                      option Option 2
+                      option Option 3
+                      option Option 4
+                      option Option 5
+                  h5.mt-2 Custom select
+                  p
+                    | To use custom select add class
+                    code .custom-select
+                    |  to select.
+                  fieldset.form-group
+                    select#customSelect.custom-select
+                      option(selected='') Open this select menu
+                      option(value='1') One
+                      option(value='2') Two
+                      option(value='3') Three
+                  h5.mt-2 Multiple select
+                  p
+                    | To use multiple select add an attribute
+                    code  multiple="multiple"
+                    | .
+                  fieldset.form-group
+                    select#countrySelect.form-control(multiple='multiple')
+                      option(selected='selected') United States
+                      option Canada
+                      option(selected='selected') United Kingdom
+                      option Japan
+                      option Australia
+                      option Germany
+                      option(selected='selected') India
+                      option Italy
+                      option Sweden
+                      option France
+                      option New Zealand
+                      option Switzerland
+                      option Russia
+                      option England
+                      option Norway
+                      option Greece
+                      option Philippines
+                      option Ireland
+                      option China
+                      option South Korea
+        // Textarea end
+        // ////////////////////////////////////////////////////////////////////////////
+  +footer
