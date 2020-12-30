@@ -57,8 +57,8 @@ function getRegistrationList(req, res) {
         .catch(() => { res.send('Sorry! Something when wrong.') })
 }
 
-router.get('/registration-form', (req, res) => {
-    res.render('registration-form')
+router.get('/student-profile-form', (req, res) => {
+    res.render('student-profile-form')
 });
 
 router.get('/form-elements', (req, res) => {
