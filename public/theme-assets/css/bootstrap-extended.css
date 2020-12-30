@@ -424,7 +424,7 @@ form
 
 form .form-body-solid
 {
-    padding: 20px 0;
+       padding: 20px 0;
     border-top: 1px solid #d1d5ea;
 }
 form label
@@ -2549,7 +2549,7 @@ select.form-control
 
     margin-top: -12px; 
 
-    color: #fff52;
+    color: #fff52b;
 }
 
 .card-font-style-white
