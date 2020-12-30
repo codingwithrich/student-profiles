@@ -25,6 +25,12 @@ nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arr
         .navbar-container.content
             #navbar-mobile.collapse.navbar-collapse.show
                 ul.nav.navbar-nav.mr-auto.float-left
+                    li.nav-item.d-block.d-md-none
+                        a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+                        i.ft-menu
+                    li.nav-item.d-none.d-md-block
+                        a.nav-link.nav-link-expand(href='#')
+                        i.ficon.ft-maximize
                 ul.nav.navbar-nav.float-right
                     //- li.dropdown.dropdown-notification.nav-item
                     //-     a.nav-link.nav-link-label(href='#' data-toggle='dropdown')
@@ -75,8 +81,8 @@ nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arr
             li.nav-item.mr-auto
                 a.navbar-brand(href='index.html')
                     
-                    img.brand-logo(alt='Catalina admin logo' src='../theme-assets/images/logo/cat-logo.png')
-                    h3.brand-text  Catto
+                    img.brand-logo(alt='Catto admin logo' src='../theme-assets/images/logo/cat-logo.png')
+                    h3.brand-text  Catto - LTA
             li.nav-item.d-md-none
                 a.nav-link.close-navbar
                     i.ft-x
