@@ -70,14 +70,17 @@ router.post('/student-profile/form', (req,res) => {
         const student = new StudentProfiles(req.body);
         console.log("Student:" + student);
         student.save().then(() => {
-            res.send("Thank you! Bye.");
+            res.render('student-profiles', {
+                title: 'Student Profiles',
+                errors: errors.array(),
+                data: req.body
+            });
         }).catch((err) => {
             console.log(err);
             res.send('Sorry! Something went wrong.')
         });
     } else {
-        res.render('student-profiles', {
-            title: 'Student Profiles',
+        res.render('student-profile/form', {
             errors: errors.array(),
             data: req.body
         });
