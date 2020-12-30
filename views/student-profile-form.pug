@@ -14,31 +14,31 @@ block body-content
                             .form-body.row
                                 .form-group.col-xs-6.col-md-4
                                     p First Name
-                                    input#fname.form-control(type='text' name='fname')
+                                    input#fname.form-control(type='text' name='fname' required='required')
                                 .form-group.col-xs-6.col-md-4
                                     p Middle Name
-                                    input#mname.form-control(type='text' name='mname')
+                                    input#mname.form-control(type='text' name='mname' required='required')
                                 .form-group.col-xs-6.col-md-4
                                     p Last Name
-                                    input#lname.form-control(type='text' name='lname')
+                                    input#lname.form-control(type='text' name='lname' required='required')
                                 .form-group.col-xs-6.col-md-4
                                     p Nickname
                                     input#nickname.form-control(type='text' name='nickname')
                                 .form-group.col-xs-6.col-md-4
                                     p Birthday
-                                    input#birthday.form-control(type='date' name='birthday')
+                                    input#birthday.form-control(type='date' name='birthday' required='required')
                                 .form-group.col-xs-6.col-md-4
                                     p Gender
-                                    select#gender.form-control
+                                    select#gender.form-control(required='required')
                                         option -
                                         option Male
                                         option Female
                                 .form-group.col-xs-6.col-md-8
                                     p Address
-                                    input#address.form-control(type='text' name='address')
+                                    input#address.form-control(type='text' name='address' required='required')
                                 .form-group.col-xs-6.col-md-4
                                     p Contact Number
-                                    input#contactnumber.form-control(type='text' placeholder='ex. 09198765432' name='contact-number')
+                                    input#contactnumber.form-control(type='text' placeholder='ex. 09198765432' name='contact-number' required='required')
                             .form-body-solid
                                 .row
                                     //- Father's Information

@@ -16,8 +16,8 @@ router.get('/', (req, res) => {
 });
 
 var validate = [
-    check('name').isLength({ min: 2 }).withMessage('Your name cannot be blank.'),
-    check('email').isLength({ min: 2 }).withMessage('Your email address cannot be blank.')
+    check('name').isLength({ min: 1 }).withMessage('Name cannot be blank.'),
+    check('email').isLength({ min: 1 }).withMessage('Email address cannot be blank.')
 ]
 
 router.post('/', validate, (req, res) => {
@@ -57,8 +57,12 @@ function getRegistrationList(req, res) {
         .catch(() => { res.send('Sorry! Something when wrong.') })
 }
 
-router.get('/student-profile/form', (req, res) => {
+router.get('/student-profile/form', validate, (req, res) => {
     res.render('student-profile-form')
+});
+
+router.post('/student-profile/form', (req,res) => {
+
 });
 
 router.get('/form-elements', (req, res) => {
