@@ -76,8 +76,8 @@ router.post('/student-profile/form', (req,res) => {
             res.send('Sorry! Something went wrong.')
         });
     } else {
-        res.render('form', {
-            title: 'Student Profile Form',
+        res.render('student-profiles', {
+            title: 'Student Profiles',
             errors: errors.array(),
             data: req.body
         });
