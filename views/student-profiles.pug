@@ -12,7 +12,7 @@ block body-content
           .col-12
             .card
               .card-header
-                h4.card-title List of Students
+                h3 Grade 6 
                 a.heading-elements-toggle
                   i.la.la-ellipsis-v.font-medium-3
                 .heading-elements
@@ -32,13 +32,7 @@ block body-content
               .card-content.collapse.show
                 .card-body
                   p.card-text
-                    | Use 
-                    code.highlighter-rouge .table-striped
-                    |  to add zebra-striping to any table row within the 
-                    code.highlighter-rouge <tbody>
-                    | . This styling doesn't work in IE8 and below as 
-                    code :nth-child
-                    |  CSS selector isn't supported.
+                    | Click on the student's name to view his/her profile.
                   .table-responsive
                   if students.length
                     table.table.table-striped
@@ -53,19 +47,4 @@ block body-content
                             td= student.first_name
                             td= student.middle_name
                             td= student.last_name
-
-
-
-  //- if students.length
-  //-   table.listing-table.table-dark.table-striped
-  //-     tr
-  //-       th First Name
-  //-       th Middle Name
-  //-       th Last Name
-  //-     each student in students
-  //-       tr
-  //-         td= student.first_name
-  //-         td= student.middle_name
-  //-         td= student.last_name        
-  //- else 
-  //-   p No registrations yet :(
+    +footer
