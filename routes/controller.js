@@ -82,7 +82,7 @@ router.post('/student-profile/form', (req,res) => {
     } else {
         res.render('student-profile/form', {
             errors: errors.array(),
-            data: req.body
+            data: req.body 
         });
     }
 });

@@ -1,17 +1,71 @@
-extends layout
+extends commons/header
+include commons/mixins
+block body-content
+  -data = data || {}
+    if errors
+      ul
+        for error in errors
+          li= error.msg
+    +headerTitle('STUDENT PROFILES')
+      .content-body
+        .row
+          .col-12
+            .card
+              .card-header
+                h4.card-title List of Students
+                a.heading-elements-toggle
+                  i.la.la-ellipsis-v.font-medium-3
+                .heading-elements
+                  ul.list-inline.mb-0
+                    li
+                      a(data-action='collapse')
+                        i.ft-minus
+                    li
+                      a(data-action='reload')
+                        i.ft-rotate-cw
+                    li
+                      a(data-action='expand')
+                        i.ft-maximize
+                    li
+                      a(data-action='close')
+                        i.ft-x
+              .card-content.collapse.show
+                .card-body
+                  p.card-text
+                    | Use 
+                    code.highlighter-rouge .table-striped
+                    |  to add zebra-striping to any table row within the 
+                    code.highlighter-rouge <tbody>
+                    | . This styling doesn't work in IE8 and below as 
+                    code :nth-child
+                    |  CSS selector isn't supported.
+                  .table-responsive
+                  if students.length
+                    table.table.table-striped
+                      thead
+                        tr
+                          th(scope='col') First Name
+                          th(scope='col') Middle Name
+                          th(scope='col') Last Name
+                      tbody
+                        each student in students
+                          tr
+                            td= student.first_name
+                            td= student.middle_name
+                            td= student.last_name
 
-block content
 
-  if students.length
-    table.listing-table.table-dark.table-striped
-      tr
-        th First Name
-        th Middle Name
-        th Last Name
-      each student in students
-        tr
-          td= student.first_name
-          td= student.middle_name
-          td= student.last_name        
-  else 
-    p No registrations yet :(
+
+  //- if students.length
+  //-   table.listing-table.table-dark.table-striped
+  //-     tr
+  //-       th First Name
+  //-       th Middle Name
+  //-       th Last Name
+  //-     each student in students
+  //-       tr
+  //-         td= student.first_name
+  //-         td= student.middle_name
+  //-         td= student.last_name        
+  //- else 
+  //-   p No registrations yet :(

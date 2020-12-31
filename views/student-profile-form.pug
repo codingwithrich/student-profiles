@@ -1,5 +1,5 @@
-extends header
-include mixins.pug
+extends commons/header
+include commons/mixins
 block body-content
     -data = data || {}
     if errors
@@ -57,23 +57,23 @@ block body-content
                                         p Address
                                         input#faddress.form-control(type='text' name='f-address')
                                     .form-group.col-xs-6.col-md-4
-                                            p Contact Number
-                                            input#fcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='f-contact-number')
+                                        p Contact Number
+                                        input#fcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='f-contact-number')
                             .form-body-solid
                                 .row
                                     //- Mother's Information
                                     .form-group.col-xs-6.col-md-6
-                                            p Mother's Name
-                                            input#mother.form-control(type='text' name='mother')
+                                        p Mother's Name
+                                        input#mother.form-control(type='text' name='mother')
                                     .form-group.col-xs-6.col-md-6
-                                            p E-mail
-                                            input#m-email.form-control(type='email' name='m-email')
+                                        p E-mail
+                                        input#m-email.form-control(type='email' name='m-email')
                                     .form-group.col-xs-6.col-md-8
-                                            p Address
-                                            input#maddress.form-control(type='text' name='m-address')
+                                        p Address
+                                        input#maddress.form-control(type='text' name='m-address')
                                     .form-group.col-xs-6.col-md-4
-                                            p Contact Number
-                                            input#mcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='m-contact-number')
+                                        p Contact Number
+                                        input#mcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='m-contact-number')
                             .form-actions.center
                                 button.btn.btn-outline-primary(type='submit') Submit
     +footer
