@@ -41,10 +41,28 @@ block body-content
                           th(scope='col') First Name
                           th(scope='col') Middle Name
                           th(scope='col') Last Name
-                      tbody
+                      tbody#students_table
                         each student in students
-                          tr
+                          - const id = student.id
+                          tr#accordion.accordion-toggle.collapsed(data-toggle='collapse' data-parent='#accordion' href='#collapse'+id)
                             td= student.first_name
                             td= student.middle_name
                             td= student.last_name
+                          tr.hide-table-padding
+                            td
+                            td(colspan='4')
+                              div(id='collapse'+id).collapse.in.p-3
+                                .row
+                                  .col-2 First Name
+                                  .col-6=student.first_name
+                                .row
+                                  .col-2 label
+                                  .col-6 value
+                                .row
+                                  .col-2 label
+                                  .col-6 value
+                                .row
+                                  .col-2 label
+                                  .col-6 value
+
     +footer
