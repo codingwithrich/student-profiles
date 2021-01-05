@@ -58,30 +58,52 @@ block body-content
                                     h6.font-weight-bold Student Information
                                     .row
                                       .col-3 Full Name
-                                      .col-6=student.first_name + ' ' + student.middle_name + ' ' + student.last_name
+                                      .col-6.text-dark=student.first_name + ' ' + student.middle_name + ' ' + student.last_name
                                     .row
                                       .col-3 Nickname
-                                      .col-4=student.nickname
+                                      .col-4.text-dark=student.nickname
                                     .row
                                       .col-3 Birthday
-                                      .col-5=student.birthday
+                                      .col-5.text-dark=student.birthday
                                     .row
                                       .col-3 Gender
-                                      .col-3=student.gender
+                                      .col-3.text-dark=student.gender
                                     .row
                                       .col-5 Contact Number
-                                      .col-7=student.contact_number
+                                      .col-7.text-dark=student.contact_number
                                     .row
                                       .col-3 Address
-                                      .col-9=student.address
+                                      .col-9.text-dark=student.address
                                   #parents_information.column.col-4
                                     h6.font-weight-bold Parents Information
                                     if parents.length
                                       each parent in parents
                                         if username == parent.student_username
                                           .row
-                                            .col-5 Father's Name
-                                            .col-6=parent.father_name
+                                            .col-5 Father's Name:
+                                            .col-6.text-dark=parent.father_name
+                                          .row
+                                            .col-5 Email:
+                                            .col-6.text-dark=parent.father_email
+                                          .row
+                                            .col-5 Contact Number:
+                                            .col-6.text-dark=parent.father_contact_number
+                                          .row
+                                            .col-5 Address:
+                                            .col-6.text-dark=parent.father_address
+                                          br
+                                          .row
+                                            .col-5 Mother's Name:
+                                            .col-6.text-dark=parent.mother_name
+                                          .row
+                                            .col-5 Email:
+                                            .col-6.text-dark=parent.mother_email
+                                          .row
+                                            .col-5 Contact Number:
+                                            .col-6.text-dark=parent.mother_contact_number
+                                          .row
+                                            .col-5 Address:
+                                            .col-6.text-dark=parent.mother_address
                                   #payment_information.column.col-4
                                     h6.font-weight-bold Payment Information
                                     if payments.length
@@ -89,5 +111,11 @@ block body-content
                                         if username == payment.student_username
                                           .row
                                             .col-5 Payment Method
-                                            .col-5=payment.payment_method
+                                            .col-5.text-dark=payment.payment_method
+                                          .row
+                                            .col-5 Payment Type
+                                            .col-5.text-dark=payment.payment_type
+                                          .row
+                                            .col-5 Payment Status
+                                            .col-5.text-dark=payment.payment_status
     +footer
