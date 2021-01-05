@@ -103,6 +103,44 @@ router.post('/student-profile/form', (req,res) => {
 
 router.get('/student-profile', getStudentProfiles, getParentDetailsByStudent, getPaymentDetailsByStudent, renderStudentProfilePage);
 
+router.get('/login', (req, res) =>{
+    res.render('login', { title: 'Login'});
+});
+
+router.post('login', (req, res) => {
+    console.log("Request Body:" + req.body);
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+        const student = new studentProfiles(req.body);
+        const student_username = student.first_name.split(" ") + student.last_name;
+        student.username = student_username;
+        console.log("Student:" + student);
+
+        const parents = new parentDetails(req.body);
+        parents.student_username = student_username;
+        console.log("Parents:" + parents);
+
+        const payment = new paymentDetails(req.body);
+        payment.student_username = student_username;
+        console.log("Payment: " + payment);
+
+        parents.save();
+        payment.save();
+        student.save().then(() => {
+           getStudentProfiles(res);
+        }).catch((err) => {
+            console.log(err);
+            res.send('Sorry! Something went wrong.')
+        });
+    } else {
+        res.render('student-profile/form', {
+            errors: errors.array(),
+            data: req.body 
+        });
+    }
+});
+
 // var validate = [
 //     check('name').isLength({ min: 1 }).withMessage('Name cannot be blank.'),
 //     check('email').isLength({ min: 1 }).withMessage('Email address cannot be blank.')
