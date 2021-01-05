@@ -51,28 +51,43 @@ block body-content
                             td= student.middle_name
                             td= student.last_name
                           tr.hide-table-padding
-                            td  
                             td(colspan='4')
-                              div(id='collapse'+username).collapse.in.p-3
+                              div(id='collapse'+username).collapse.in.p-2
                                 .row
-                                  .col-2 Username
-                                  .col-6=username
-                                .row
-                                  .col-2 First Name
-                                  .col-6=student.first_name
-                                .row
-                                  .col-2 Last Name
-                                  .col-6=student.last_name
-                                if parents.length
-                                  each parent in parents
-                                    if username == parent.student_username
-                                      .row
-                                        .col-2 Father's Name
-                                        .col-6=parent.father_name
-                                if payments.length
-                                  each payment in payments
-                                    if username == payment.student_username
-                                      .row
-                                        .col-2 Payment Method
-                                        .col-6=payment.payment_method
+                                  #student_information.column.col-4
+                                    h6.font-weight-bold Student Information
+                                    .row
+                                      .col-3 Full Name
+                                      .col-6=student.first_name + ' ' + student.middle_name + ' ' + student.last_name
+                                    .row
+                                      .col-3 Nickname
+                                      .col-4=student.nickname
+                                    .row
+                                      .col-3 Birthday
+                                      .col-5=student.birthday
+                                    .row
+                                      .col-3 Gender
+                                      .col-3=student.gender
+                                    .row
+                                      .col-5 Contact Number
+                                      .col-7=student.contact_number
+                                    .row
+                                      .col-3 Address
+                                      .col-9=student.address
+                                  #parents_information.column.col-4
+                                    h6.font-weight-bold Parents Information
+                                    if parents.length
+                                      each parent in parents
+                                        if username == parent.student_username
+                                          .row
+                                            .col-5 Father's Name
+                                            .col-6=parent.father_name
+                                  #payment_information.column.col-4
+                                    h6.font-weight-bold Payment Information
+                                    if payments.length
+                                      each payment in payments
+                                        if username == payment.student_username
+                                          .row
+                                            .col-5 Payment Method
+                                            .col-5=payment.payment_method
     +footer
