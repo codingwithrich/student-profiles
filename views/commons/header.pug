@@ -52,7 +52,10 @@ html.loading(lang='en' data-textdirection='ltr')
                                     a.dropdown-item(href='#')
                                         span.avatar.avatar-online
                                             img(src='../theme-assets/images/logo/cat-logo.png' alt='avatar')
-                                            span.user-name.text-bold-700.ml-1 John Doe
+                                            if(response != null)
+                                                span.user-name.text-bold-700.ml-1=response.first_name + ' ' + response.last_name
+                                            else 
+                                                span.user-name.text-bold-700.ml-1 John Doe
                                     .dropdown-divider
                                     a.dropdown-item(href='#')
                                         i.ft-user
@@ -67,7 +70,7 @@ html.loading(lang='en' data-textdirection='ltr')
                                     //-     i.ft-message-square
                                     //-     |  Chats
                                     .dropdown-divider
-                                    a.dropdown-item(href='#')
+                                    a.dropdown-item(href='/login')
                                         i.ft-power
                                         |  Logout
     // ////////////////////////////////////////////////////////////////////////////
