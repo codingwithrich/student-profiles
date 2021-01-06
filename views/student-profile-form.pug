@@ -34,7 +34,7 @@ block body-content
                                     input#birthday.form-control(type='date' name='birthday' required='required')
                                 .form-group.col-xs-6.col-md-4
                                     p Gender
-                                    select#gender.form-control(required='required')
+                                    select#gender.form-control(required='required' name='gender')
                                         option -
                                         option Male
                                         option Female
@@ -49,31 +49,56 @@ block body-content
                                     //- Father's Information
                                     .form-group.col-xs-6.col-md-6
                                         p Father's Name
-                                        input#father.form-control(type='text' name='father')
+                                        input#father_name.form-control(type='text' name='father_name')
                                     .form-group.col-xs-6.col-md-6
                                         p E-mail
-                                        input#f-email.form-control(type='email' name='f-email')
+                                        input#father_email.form-control(type='email' name='father_email')
                                     .form-group.col-xs-6.col-md-8
                                         p Address
-                                        input#faddress.form-control(type='text' name='f-address')
+                                        input#father_address.form-control(type='text' name='father_address')
                                     .form-group.col-xs-6.col-md-4
                                         p Contact Number
-                                        input#fcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='f-contact-number')
+                                        input#father_contact_number.form-control(type='text' placeholder='ex. 09198765432' name='father_contact_number')
                             .form-body-solid
                                 .row
                                     //- Mother's Information
                                     .form-group.col-xs-6.col-md-6
                                         p Mother's Name
-                                        input#mother.form-control(type='text' name='mother')
+                                        input#mother_name.form-control(type='text' name='mother_name')
                                     .form-group.col-xs-6.col-md-6
                                         p E-mail
-                                        input#m-email.form-control(type='email' name='m-email')
+                                        input#mother_email.form-control(type='email' name='mother_email')
                                     .form-group.col-xs-6.col-md-8
                                         p Address
-                                        input#maddress.form-control(type='text' name='m-address')
+                                        input#mother_address.form-control(type='text' name='mother_address')
                                     .form-group.col-xs-6.col-md-4
                                         p Contact Number
-                                        input#mcontactnumber.form-control(type='text' placeholder='ex. 09198765432' name='m-contact-number')
-                            .form-actions.center
+                                        input#mother_contact_number.form-control(type='text' placeholder='ex. 09198765432' name='mother_contact_number')
+                            .form-body-solid
+                                .row
+                                    //- Payment Information
+                                    .form-group.col-xs-6.col-md-4
+                                        p Payment Method
+                                        select#payment_method.form-control(required='required' name='payment_method')
+                                            option -
+                                            option GCash
+                                            option Online Bank Transfer
+                                            option Cash
+                                            option Cheque
+                                    .form-group.col-xs-6.col-md-4
+                                        p Payment Status
+                                        select#payment_status.form-control(required='required' name='payment_status')
+                                            option -
+                                            option Fully Paid
+                                            option Partially Paid
+                                            option Not Paid
+                                    .form-group.col-xs-6.col-md-4
+                                        p Payment Type
+                                        select#payment_type.form-control(required='required' name='payment_type')
+                                            option -
+                                            option Full Payment
+                                            option Installment Monthly
+                                            option Installment Quarterly
+                            .form-body-solid.text-center
                                 button.btn.btn-outline-primary(type='submit') Submit
     +footer
