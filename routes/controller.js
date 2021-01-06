@@ -132,12 +132,27 @@ function registerUser(req, res){
     }
 }
 
+function login(req, res){
+    console.log("Request Body:" + req.body);
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) { 
+        validateLogin(req, res);
+    } else {
+        res.render('login', {
+            title: 'Login',
+            errors: errors.array(),
+            data: req.body 
+        });
+    }
+}
+
 router.get('/', (req, res) => {
-    renderStudentProfileForm(req, res);
+    renderLogin(req, res);
 });
 
 router.post('/', (req, res) => {
-   submitStudentProfileForm(req, res);
+   login(req, res);
 });
 
 router.get('/student-profile/form', (req, res) => {
@@ -155,18 +170,7 @@ router.get('/login', (req, res) =>{
 });
 
 router.post('/login', (req, res) => {
-    console.log("Request Body:" + req.body);
-    const errors = validationResult(req);
-
-    if (errors.isEmpty()) { 
-        validateLogin(req, res);
-    } else {
-        res.render('login', {
-            title: 'Login',
-            errors: errors.array(),
-            data: req.body 
-        });
-    }
+    login(req, res);
 });
 
 router.get('/register', (req, res) => {
@@ -187,6 +191,7 @@ router.post('/register', (req, res) => {
         });
     }
 });
+
 // var validate = [
 //     check('name').isLength({ min: 1 }).withMessage('Name cannot be blank.'),
 //     check('email').isLength({ min: 1 }).withMessage('Email address cannot be blank.')
