@@ -105,20 +105,24 @@ function validateLogin(req, res){
             res.render('login', { error: true });
         } else {
             userSession = req.session;
-            userSession.username = username;
+            if(userSession != undefined){
+                userSession.username = username;
 
-            console.log('User found! ' + user);
-            res.render('student-profile-form', {
-                title: 'Student Profile Form',
-                response: user
-            });;
+                console.log('User found! ' + user);
+                res.render('student-profile-form', {
+                    title: 'Student Profile Form',
+                    response: user
+                });;
+            } else {
+                console.log("userSession is undefined");
+            }
         }
     });
 }
 
 function renderLogin(req, res){
     let userSession = req.session;
-    if(userSession.email){
+    if(userSession != undefined && userSession.email){
         renderStudentProfileForm(req,res);
     }
     res.render('login', { title: 'Login'});

@@ -12,6 +12,12 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: "secret",
+    cookie: { secure: true},
+  }))
 app.use(compression());
 app.use(helmet());
 app.use(bodyParser.urlencoded({extended: true}));
