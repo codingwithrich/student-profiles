@@ -27,13 +27,23 @@ html(lang='en')
             span.login100-form-title.p-b-34.p-t-27
               | Log in
             if(error == true)
-              .alert.round.bg-danger.alert-icon-left.alert-dismissible.mb-2(role='alert')
-                span.alert-icon
-                  i.ft-thumbs-down
-                button.close(type='button' data-dismiss='alert' aria-label='Close')
-                  span(aria-hidden='true') ×
-                strong Oh snap!
-                |  Your username or password might be wrong. Please try again.
+              if(errorMessage == 'NO_VALID_LOGIN')
+                .alert.round.bg-danger.alert-icon-left.alert-dismissible.mb-2(role='alert')
+                  span.alert-icon
+                    i.ft-thumbs-down
+                  button.close(type='button' data-dismiss='alert' aria-label='Close')
+                    span(aria-hidden='true') ×
+                  strong Oh snap!
+                  |  Please login first.
+              else
+                .alert.round.bg-danger.alert-icon-left.alert-dismissible.mb-2(role='alert')
+                  span.alert-icon
+                    i.ft-thumbs-down
+                  button.close(type='button' data-dismiss='alert' aria-label='Close')
+                    span(aria-hidden='true') ×
+                  strong Oh snap!
+                  |  Your username or password might be wrong. Please try again.
+                  
             .wrap-input100.validate-input(data-validate='Enter username')
               input.input100(type='text' name='username' placeholder='Username' required='required')
               span.focus-input100(data-placeholder='')

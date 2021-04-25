@@ -1,6 +1,7 @@
 var helmet = require('helmet');
 
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/controller');

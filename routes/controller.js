@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const studentProfiles = mongoose.model('studentProfiles');
 const parentDetails = mongoose.model('studentParentDetails');
@@ -15,9 +16,14 @@ const router = express.Router();
 module.exports = router;
 
 function renderStudentProfileForm(req, res){
-    res.render('student-profile-form', {
-        title: 'Student Profile Form'
-    });
+    userSession = req.session;
+    if (userSession.username){
+        res.render('student-profile-form', {
+            title: 'Student Profile Form'
+        });
+    } else {
+        res.render('login', { error: true, errorMessage: 'NO_VALID_LOGIN' })
+    }
 }
 
 function submitStudentProfileForm(req, res){
@@ -98,6 +104,9 @@ function validateLogin(req, res){
         } else if (user == null) {
             res.render('login', { error: true });
         } else {
+            userSession = req.session;
+            userSession.username = username;
+
             console.log('User found! ' + user);
             res.render('student-profile-form', {
                 title: 'Student Profile Form',
@@ -108,6 +117,10 @@ function validateLogin(req, res){
 }
 
 function renderLogin(req, res){
+    let userSession = req.session;
+    if(userSession.email){
+        renderStudentProfileForm(req,res);
+    }
     res.render('login', { title: 'Login'});
 }
 
