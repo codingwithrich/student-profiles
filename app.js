@@ -5,14 +5,16 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const bodyParser = require('body-parser');
-const routes = require('./routes/controller');
 const compression = require('compression');
+
+const userRoutes = require('./routes/user');
+const studentProfileDetails = require('./routes/studentprofiledetails');
+const studentProfileForm = require('./routes/studentprofileform');
 
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
 app.use(cookieParser());
 app.use(session({
     resave: false,
@@ -22,8 +24,12 @@ app.use(session({
   }))
 app.use(compression());
 app.use(helmet());
+
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/', routes);
 app.use(express.static('public'));
+
+app.use('/', userRoutes);
+app.use('/', studentProfileDetails);
+app.use('/', studentProfileForm);
 
 module.exports = app;
