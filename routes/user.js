@@ -112,6 +112,3 @@ function registerUser(req, res){
         });
     }
 }
-
-
-

@@ -64,4 +64,14 @@ router.post('/student-profile/form', (req,res) => {
    submitStudentProfileForm(req,res);
 });
 
+router.get('/multi-step-form', (req, res) => {
+    renderMultiStepForm(req,res);
+})
+
+function renderMultiStepForm(req, res){
+    res.render('multi-step-form', {
+        title: 'Multi Step Form'
+    });
+}
+
 module.exports = router
