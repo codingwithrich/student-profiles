@@ -1,5 +1,4 @@
 const express = require('express');
-const session = require('express-session');
 const mongoose = require('mongoose');
 const studentProfiles = mongoose.model('studentProfiles');
 const parentDetails = mongoose.model('studentParentDetails');
@@ -16,8 +15,8 @@ const router = express.Router();
 module.exports = router;
 
 function renderStudentProfileForm(req, res){
-    userSession = req.session;
-    if (userSession.username){
+    console.log(req.cookies);
+    if (req.cookies){
         res.render('student-profile-form', {
             title: 'Student Profile Form'
         });
@@ -104,27 +103,21 @@ function validateLogin(req, res){
         } else if (user == null) {
             res.render('login', { error: true });
         } else {
-            userSession = req.session;
-            if(userSession != undefined){
-                userSession.username = username;
-
+            if(req.cookies){
                 console.log('User found! ' + user);
+                res.cookie('username', username, {maxAge: 360000});
                 res.render('student-profile-form', {
-                    title: 'Student Profile Form',
-                    response: user
+                    title: 'Student Profile Form'
                 });;
-            } else {
-                console.log("userSession is undefined");
             }
         }
     });
 }
 
 function renderLogin(req, res){
-    let userSession = req.session;
-    if(userSession != undefined && userSession.email){
-        renderStudentProfileForm(req,res);
-    }
+    // if(req.cookies){
+    //     renderStudentProfileForm(req,res);
+    // }
     res.render('login', { title: 'Login'});
 }
 
@@ -173,7 +166,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/student-profile/form', (req, res) => {
-   renderStudentProfileForm(res);
+   renderStudentProfileForm(req, res);
 });
 
 router.post('/student-profile/form', (req,res) => {
