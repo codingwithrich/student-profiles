@@ -6,44 +6,120 @@ block body-content
         ul
         for error in errors
             li= error.msg
-    +headerTitle('STUDENT PROFILES')
+    +headerTitle('NEW STUDENT PROFILE')
         .content-body.row.justify-content-md-center
             .col-xs-6.col-md-8
-                .card
-                    .card-content.text-center
-                        .card-body
-                            h2.card Student Profile Form
-                            // MultiStep Form
-                            .row
-                                .col-md-12
-                                    form#msform
-                                        // progressbar
-                                        ul#progressbar
-                                            li.active Personal Details
-                                            li Social Profiles
-                                            li Account Setup
-                                        // fieldsets
-                                        fieldset
-                                            h2.fs-title Personal Details
-                                            h3.fs-subtitle Tell us something more about you
-                                            input(type='text' name='fname' placeholder='First Name')
-                                            input(type='text' name='lname' placeholder='Last Name')
-                                            input(type='text' name='phone' placeholder='Phone')
-                                            input.next.action-button(type='button' name='next' value='Next')
-                                        fieldset
-                                            h2.fs-title Social Profiles
-                                            h3.fs-subtitle Your presence on the social network
-                                            input(type='text' name='twitter' placeholder='Twitter')
-                                            input(type='text' name='facebook' placeholder='Facebook')
-                                            input(type='text' name='gplus' placeholder='Google Plus')
-                                            input.previous.action-button-previous(type='button' name='previous' value='Previous')
-                                            input.next.action-button(type='button' name='next' value='Next')
-                                        fieldset
-                                            h2.fs-title Create your account
-                                            h3.fs-subtitle Fill in your credentials
-                                            input(type='text' name='email' placeholder='Email')
-                                            input(type='password' name='pass' placeholder='Password')
-                                            input(type='password' name='cpass' placeholder='Confirm Password')
-                                            input.previous.action-button-previous(type='button' name='previous' value='Previous')
-                                            input.submit.action-button(type='submit' name='submit' value='Submit')
+                br
+                br
+                br
+                // MultiStep Form
+                .row
+                    .col-md-12
+                        form#msform(action="/student-profile/form" method="POST").form
+                            // progressbar
+                            ul#progressbar
+                                li.active Personal Details
+                                li Parents Information
+                                li Accounting Information
+                            // fieldsets
+                            fieldset
+                                h2.fs-title Personal Details
+                                br
+                                .form-body.row
+                                    .form-group.col-xs-6.col-md-4
+                                        p ID Number
+                                        input(type='text' name='id_number' required='required' value=data.first_name placeholder='ex. 2020-012345')
+                                .form-body.row    
+                                    .form-group.col-xs-6.col-md-4
+                                        p First Name
+                                        input(type='text' name='first_name' required='required' value=data.first_name placeholder='ex. John')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Middle Name
+                                        input(type='text' name='middle_name' placeholder='ex. Cruz')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Last Name
+                                        input(type='text' name='last_name' placeholder='ex. Santos')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Nickname
+                                        input(type='text' name='nickname' required='required' value=data.first_name placeholder='ex. John')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Gender
+                                        select(required='required' name='gender' placeholder='Gender')
+                                            option Male
+                                            option Female
+                                    .form-group.col-xs-6.col-md-4
+                                        p Birthday
+                                        input(type='date' name='birthday' placeholder='Birthday')
+                                    .form-group.col-xs-6.col-md-8
+                                        p Address
+                                        input(type='text' name='address' required='required' placeholder='ex. 123 St., Pandacan, Manila')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Contact Number
+                                        input(type='text' placeholder='ex. 09198765432' name='contact-number' required='required')
+                                input.next.action-button(type='button' name='next' value='Next')
+                            fieldset
+                                h2.fs-title Parents Information
+                                br
+                                .form-body.row
+                                    .form-group.col-xs-6.col-md-4
+                                        p ID Number
+                                        input(type='text' name='id_number' required='required' value=data.first_name placeholder='ex. 2020-012345')
+                                .form-body.row    
+                                    .form-group.col-xs-6.col-md-6
+                                        p Father's Name
+                                        input(type='text' name='father_name')
+                                    .form-group.col-xs-6.col-md-6
+                                        p E-mail
+                                        input(type='email' name='father_email')
+                                    .form-group.col-xs-6.col-md-8
+                                        p Address
+                                        input(type='text' name='father_address')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Contact Number
+                                        input(type='text' placeholder='ex. 09198765432' name='father_contact_number')
+                                    .form-group.col-xs-6.col-md-6
+                                        p Mother's Name
+                                        input(type='text' name='mother_name')
+                                    .form-group.col-xs-6.col-md-6
+                                        p E-mail
+                                        input(type='email' name='mother_email')
+                                    .form-group.col-xs-6.col-md-8
+                                        p Address
+                                        input(type='text' name='mother_address')
+                                    .form-group.col-xs-6.col-md-4
+                                        p Contact Number
+                                        input(type='text' placeholder='ex. 09198765432' name='mother_contact_number')       
+                                input.previous.action-button-previous(type='button' name='previous' value='Previous')
+                                input.next.action-button(type='button' name='next' value='Next')
+                                br
+                                br
+                            fieldset
+                                h2.fs-title Accounting Information
+                                .form-body.row
+                                    //- Payment Information
+                                    .form-group.col-xs-6.col-md-4
+                                        p Payment Method
+                                        select#payment_method.form-control(required='required' name='payment_method')
+                                            option -
+                                            option GCash
+                                            option Online Bank Transfer
+                                            option Cash
+                                            option Cheque
+                                    .form-group.col-xs-6.col-md-4
+                                        p Payment Status
+                                        select#payment_status.form-control(required='required' name='payment_status')
+                                            option -
+                                            option Fully Paid
+                                            option Partially Paid
+                                            option Not Paid
+                                    .form-group.col-xs-6.col-md-4
+                                        p Payment Type
+                                        select#payment_type.form-control(required='required' name='payment_type')
+                                            option -
+                                            option Full Payment
+                                            option Installment Monthly
+                                            option Installment Quarterly
+                                input.previous.action-button-previous(type='button' name='previous' value='Previous')
+                                input.submit.action-button(type='submit' name='submit' value='Submit')
+
     +footer

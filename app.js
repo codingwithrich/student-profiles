@@ -8,8 +8,8 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 
 const userRoutes = require('./routes/user');
-const studentProfileDetails = require('./routes/studentprofiledetails');
-const studentProfileForm = require('./routes/studentprofileform');
+const studentProfileDetails = require('./routes/studentProfileDetails');
+const studentProfileForm = require('./routes/studentProfileForms');
 
 const app = express();
 

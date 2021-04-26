@@ -76,7 +76,7 @@ $(".previous").click(function () {
       },
       duration: 800,
       complete: function () {
-        current_fs.parent();
+        current_fs.parent();   
         animating = false;
       },
     }

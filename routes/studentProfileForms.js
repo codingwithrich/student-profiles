@@ -15,7 +15,7 @@ function renderStudentProfileForm(req, res){
     console.log(req.cookies);
     if (req.cookies){
         res.render('student-profile-form', {
-            title: 'Student Profile Form'
+            title: 'New Student Profile'
         });
     } else {
         res.render('login', { error: true, errorMessage: 'NO_VALID_LOGIN' })
