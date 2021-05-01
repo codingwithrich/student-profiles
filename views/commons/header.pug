@@ -18,6 +18,7 @@ html.loading(lang='en' data-textdirection='ltr')
         link(rel='stylesheet' type='text/css' href='../theme-assets/css/core/menu/menu-types/vertical-menu.css')
         link(rel='stylesheet' type='text/css' href='../theme-assets/css/core/colors/palette-gradient.css')
         link(rel='stylesheet' type='text/css' href='../assets/css/style.css')
+        script(src='assets/js/jquery-validation.js')
     body.vertical-layout.vertical-menu.2-columns.menu-expanded.fixed-navbar(data-open='click' data-menu='vertical-menu' data-color='bg-gradient-x-purple-blue' data-col='2-columns')
     // fixed-top
     nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-light
@@ -87,18 +88,41 @@ html.loading(lang='en' data-textdirection='ltr')
                         i.ft-x
         .main-menu-content
             ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
-                li.nav-item
-                    a(href='/student-profile')
-                        i.ft-home
+                li.nav-item.has-sub
+                    a(href='#')
+                        i.ft-layers
                         span.menu-title(data-i18n='') Student Profiles
-                li.nav-item
-                    a(href='/student-profile/form')
-                        i.ft-pie-chart
-                        span.menu-title(data-i18n='') New Student Profile
-                li.nav-item
-                    a(href='/multi-step-form')
-                        i.ft-droplet
-                        span.menu-title(data-i18n='') Multi Step Form
+                    ul.menu-content(style='')
+                        li.nav-item.has-sub
+                            a(href='#') Elementary
+                            ul.menu-content(style='')
+                                li.nav-item
+                                    a(href='/student-profile/grade-6') Grade 6
+                                li.nav-item
+                                    a(href='/student-profile/grade-6') Grade 5
+                                li.nav-item
+                                    a(href='/student-profile/grade-6') Grade 4
+                                li.nav-item
+                                    a(href='/student-profile/grade-6') Grade 3
+                                li.nav-item
+                                    a(href='/student-profile/grade-6') Grade 2
+                                li.nav-item
+                                    a(href='/student-profile/grade-6') Grade 1
+                        li.nav-item.has-sub
+                            a(href='#') Pre-School
+                                ul.menu-content(style='')
+                                    li.nav-item
+                                        a(href='/student-profile') Kinder 3
+                                    li.nav-item
+                                        a(href='/student-profile') Kinder 2
+                                    li.nav-item
+                                        a(href='/student-profile') Kinder 1
+                                    li.nav-item
+                                        a(href='/student-profile') Nursery
+                    li.nav-item
+                        a(href='/multi-step-form') 
+                            i.ft-edit
+                            span.menu-title(data-i18n='') New Student Profile
                 //- li.nav-item
                 //-     a(href='cards.html')
                 //-         i.ft-layers

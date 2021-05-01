@@ -7,9 +7,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 
-const userRoutes = require('./routes/user');
-const studentProfileDetails = require('./routes/studentProfileDetails');
-const studentProfileForm = require('./routes/studentProfileForms');
+const userRoutes = require('./routes/userController');
+const studentProfileDetails = require('./routes/studentProfileController');
+const studentProfileForm = require('./routes/profileFormsController');
 
 const app = express();
 

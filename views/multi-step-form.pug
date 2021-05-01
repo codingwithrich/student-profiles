@@ -15,7 +15,7 @@ block body-content
                 // MultiStep Form
                 .row
                     .col-md-12
-                        form#msform(action="/student-profile/form" method="POST").form
+                        form#msform.msform(action="/multi-step-form" method="POST").form
                             // progressbar
                             ul#progressbar
                                 li.active Personal Details
@@ -32,27 +32,27 @@ block body-content
                                 .form-body.row    
                                     .form-group.col-xs-6.col-md-4
                                         p First Name
-                                        input(type='text' name='first_name' required='required' value=data.first_name placeholder='ex. John')
+                                        input(type='text' name='first_name' required='required' value=data.first_name)
                                     .form-group.col-xs-6.col-md-4
                                         p Middle Name
-                                        input(type='text' name='middle_name' placeholder='ex. Cruz')
+                                        input(type='text' name='middle_name')
                                     .form-group.col-xs-6.col-md-4
                                         p Last Name
-                                        input(type='text' name='last_name' placeholder='ex. Santos')
+                                        input(type='text' name='last_name')
                                     .form-group.col-xs-6.col-md-4
                                         p Nickname
-                                        input(type='text' name='nickname' required='required' value=data.first_name placeholder='ex. John')
+                                        input(type='text' name='nickname' required='required' value=data.first_name)
                                     .form-group.col-xs-6.col-md-4
                                         p Gender
-                                        select(required='required' name='gender' placeholder='Gender')
+                                        select(required='required' name='gender')
                                             option Male
                                             option Female
                                     .form-group.col-xs-6.col-md-4
                                         p Birthday
-                                        input(type='date' name='birthday' placeholder='Birthday')
+                                        input(type='date' name='birthday')
                                     .form-group.col-xs-6.col-md-8
                                         p Address
-                                        input(type='text' name='address' required='required' placeholder='ex. 123 St., Pandacan, Manila')
+                                        input(type='text' name='address' required='required')
                                     .form-group.col-xs-6.col-md-4
                                         p Contact Number
                                         input(type='text' placeholder='ex. 09198765432' name='contact-number' required='required')
@@ -60,10 +60,6 @@ block body-content
                             fieldset
                                 h2.fs-title Parents Information
                                 br
-                                .form-body.row
-                                    .form-group.col-xs-6.col-md-4
-                                        p ID Number
-                                        input(type='text' name='id_number' required='required' value=data.first_name placeholder='ex. 2020-012345')
                                 .form-body.row    
                                     .form-group.col-xs-6.col-md-6
                                         p Father's Name
@@ -91,35 +87,33 @@ block body-content
                                         input(type='text' placeholder='ex. 09198765432' name='mother_contact_number')       
                                 input.previous.action-button-previous(type='button' name='previous' value='Previous')
                                 input.next.action-button(type='button' name='next' value='Next')
-                                br
-                                br
                             fieldset
                                 h2.fs-title Accounting Information
+                                br
                                 .form-body.row
                                     //- Payment Information
                                     .form-group.col-xs-6.col-md-4
                                         p Payment Method
-                                        select#payment_method.form-control(required='required' name='payment_method')
-                                            option -
+                                        select(required='required' name='payment_method')
                                             option GCash
                                             option Online Bank Transfer
                                             option Cash
                                             option Cheque
                                     .form-group.col-xs-6.col-md-4
                                         p Payment Status
-                                        select#payment_status.form-control(required='required' name='payment_status')
-                                            option -
+                                        select(required='required' name='payment_status')
                                             option Fully Paid
                                             option Partially Paid
                                             option Not Paid
                                     .form-group.col-xs-6.col-md-4
                                         p Payment Type
-                                        select#payment_type.form-control(required='required' name='payment_type')
-                                            option -
+                                        select(required='required' name='payment_type')
                                             option Full Payment
                                             option Installment Monthly
                                             option Installment Quarterly
+                                    .form-group.col-xs-6.col-md-4
+                                        p Amount Paid
+                                        input(type='text' name='amount_paid' placeholder='ex. 10000')       
                                 input.previous.action-button-previous(type='button' name='previous' value='Previous')
-                                input.submit.action-button(type='submit' name='submit' value='Submit')
-
+                                input.submit.action-button(type='submit' value='Submit')
     +footer

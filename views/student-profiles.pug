@@ -34,7 +34,6 @@ block body-content
                   p.card-text
                     | Click on the student's name to view his/her profile.
                   .table-responsive
-                  if students.length
                     table.table.table-striped
                       thead
                         tr
@@ -43,6 +42,10 @@ block body-content
                           th(scope='col') Middle Name
                           th(scope='col') Last Name
                       tbody#students_table
+                      if students == null
+                        tr 
+                          td(colspan='4' style='text-align: center') No result
+                      else
                         each student in students
                           - const username = student.username
                           tr#accordion.accordion-toggle.collapsed(data-toggle='collapse' data-parent='#accordion' href='#collapse'+username)
