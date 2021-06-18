@@ -20,10 +20,11 @@ block body-content
                             ul#progressbar
                                 li.active Personal Details
                                 li Parents Information
-                                li Accounting Information
+                                li Payment Information
                             // fieldsets
                             fieldset
                                 h2.fs-title Personal Details
+                                h5.danger * Please enter all required fields.
                                 br
                                 .form-body.row
                                     .form-group.col-xs-6.col-md-4
@@ -73,6 +74,7 @@ block body-content
                                 input.next.action-button(type='button' name='next' value='Next')
                             fieldset
                                 h2.fs-title Parents Information
+                                h5.danger * Please enter all required fields.
                                 br
                                 .form-body.row    
                                     .form-group.col-xs-6.col-md-6
@@ -98,13 +100,13 @@ block body-content
                                         input(type='text' name='mother_address')
                                     .form-group.col-xs-6.col-md-4
                                         p Contact Number*
-                                        input(type='text' name='mother_contact_number')
-                                h6.fs-subtitle.left-indent Note: N/A if not applicable       
+                                        input(type='text' name='mother_contact_number')       
+                                h6.fs-subtitle.left-indent Note: N/A if not applicable
                                 input.previous.action-button-previous(type='button' name='previous' value='Previous')
                                 input.next.action-button(type='button' name='next' value='Next')
-
                             fieldset
-                                h2.fs-title Accounting Information
+                                h2.fs-title Payment Information
+                                h5.danger * Please enter all required fields.
                                 br
                                 .form-body.row
                                     //- Payment Information
@@ -129,8 +131,8 @@ block body-content
                                             option Installment Quarterly
                                     .form-group.col-xs-6.col-md-4
                                         p Amount Paid*
-                                        input(type='text' name='amount_paid' placeholder='ex. 10000')   
-                                h6.fs-subtitle.left-indent Note: N/A if not applicable    
+                                        input(type='text' name='amount_paid' placeholder='ex. 10000')       
+                                h6.fs-subtitle.left-indent Note: N/A if not applicable
                                 input.previous.action-button-previous(type='button' name='previous' value='Previous')
                                 input.submit.action-button(type='submit' value='Submit')
     +footer

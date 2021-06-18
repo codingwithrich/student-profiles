@@ -5,6 +5,10 @@ const STUDENT_DETAILS_SCHEMA = new mongoose.Schema({
         type: String,
         trim: true
     },
+    grade_level: {
+        type: String,
+        trim: true
+    },
     first_name: {
         type: String,
         trim: true

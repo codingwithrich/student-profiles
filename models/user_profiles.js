@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 
 const USER_PROFILE_SCHEMA = new mongoose.Schema({
+    id_number: {
+        type: String,
+        trim: true
+    },
+    adviser_grade_level: {
+        type: String,
+        trim: true
+    },
     first_name: {
         type: String,
         trim: true

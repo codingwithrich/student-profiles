@@ -18,15 +18,18 @@
     "http-auth": "^4.1.2",
     "jquery-validation": "^1.19.3",
     "mongoose": "^5.11.8",
+    "node-input-validator": "^4.4.1",
     "nodemon": "^2.0.6",
-    "pug": "^3.0.0",
-    "pug-beautify": "^0.1.1"
+    "pug": "^3.0.2",
+    "pug-beautify": "^0.1.1",
+    "title-case": "^3.0.3",
+    "validator": "^13.6.0"
   },
   "devDependencies": {
-    "gulp-pug": "^3.0.0",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-pug": "^5.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "node-sass": "^4.13.0"

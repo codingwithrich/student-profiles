@@ -119,6 +119,12 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     margin-bottom: 20px;
 }
 
+.left-indent {
+    font-weight: light;
+    font-size: 12px;
+    color: rgb(151, 150, 150);
+    text-align: left;
+}
 /*progressbar*/
 #progressbar {
     margin-bottom: 30px;
@@ -132,7 +138,7 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     color: black;
     text-transform: uppercase;
     font-size: 9px;
-    width: 33.33%;
+    width: 31.5%;
     float: left;
     position: relative;
     letter-spacing: 1px;

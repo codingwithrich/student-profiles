@@ -5,10 +5,49 @@ const paymentDetails = mongoose.model('payment_details');
 
 const { check, validationResult } = require('express-validator');
 
+
+function getStudentProfiles(req, res, next){
+    studentProfiles.find()
+    .then((result) => {
+        console.log("result:" + result.length);
+        if(result.length > 0){
+            req.students = result;
+        } else {
+            req.students = null;
+        }
+        return next();
+    }).catch(() => { res.send('Sorry! Something when wrong.') });
+}
+
+function getParentDetailsByStudent(req, res, next){
+    parentDetails.find()
+    .then((result) => {
+        if(result.length > 0){
+            req.parents = result;
+        } else {
+            req.parents = null;
+        }   
+        return next();
+    }).catch(() => { res.send('Sorry! Something when wrong.') });
+}
+
+function getPaymentDetailsByStudent(req, res, next){
+    paymentDetails.find()
+        .then((result) => {
+            if(result.length > 0){
+                req.payment = result;
+            } else {
+                req.payment = null;
+            }
+            return next();
+        }).catch(() => { res.send('Sorry! Something when wrong.') });
+}
+
+
+
 function getStudentProfiles(req, res, next){
     studentProfiles.find()
     .then((response) => {
-
         if(response.length != 0){
             req.students = response;
             return next();
