@@ -37,6 +37,16 @@ const PARENT_DETAILS_SCHEMA = new mongoose.Schema({
     mother_contact_number: {
         type: String,
         trim: true
+    },
+    created_at: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
+    },
+    updated_at: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
     }
 });
 

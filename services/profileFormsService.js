@@ -23,10 +23,16 @@ function submitStudentProfileForm(req, res){
             renderMultiStepFormError(req, res);
         } else {
             const student = new studentProfiles(req.body);
-            const student_username = student.first_name.split(" ") + student.last_name;
-            const firstNameEdited = titleCase(student.first_name);
+            const student_username = (student.first_name.split(" ")[0] + student.last_name).toLowerCase();
+            const firstNameTitleCase = titleCase(student.first_name);
+            const middleNameTitleCase = titleCase(student.middle_name);
+            const lastNameTitleCase = titleCase(student.last_name);
+
             student.username = student_username;
-            student.first_name = firstNameEdited;
+            student.first_name = firstNameTitleCase;
+            student.middle_name = middleNameTitleCase;
+            student.last_name = lastNameTitleCase;
+
             console.log("Student:" + student);
 
             const parents = new parentDetails(req.body);

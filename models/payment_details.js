@@ -17,6 +17,24 @@ const PAYMENT_DETAILS_SCHEMA = new mongoose.Schema({
     payment_type: {
         type: String,
         trim: true
+    },
+    paid_amount: {
+        type: Number,
+        trim: true
+    },
+    remaining_balance: {
+        type: Number,
+        trim: true
+    },
+    created_at: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
+    },
+    updated_at: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
     }
 });
 

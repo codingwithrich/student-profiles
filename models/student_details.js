@@ -30,7 +30,7 @@ const STUDENT_DETAILS_SCHEMA = new mongoose.Schema({
         trim: true
     },
     birthday: {
-        type: Date,
+        type: String,
         trim: true
     },
     gender: {
@@ -41,9 +41,19 @@ const STUDENT_DETAILS_SCHEMA = new mongoose.Schema({
         type: String,
         trim: true
     },
-    contact_number:{
+    contact_number: {
         type: String,
         trim: true
+    },
+    created_at: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
+    },
+    updated_at: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
     }
 }); 
 

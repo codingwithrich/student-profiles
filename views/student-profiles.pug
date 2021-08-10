@@ -37,7 +37,7 @@ block body-content
                     table.table.table-striped
                       thead
                         tr
-                          th(scope='col') Username
+                          th(scope='col') Student ID
                           th(scope='col') First Name
                           th(scope='col') Middle Name
                           th(scope='col') Last Name
@@ -49,7 +49,7 @@ block body-content
                         each student in students
                           - const username = student.username
                           tr#accordion.accordion-toggle.collapsed(data-toggle='collapse' data-parent='#accordion' href='#collapse'+username)
-                            td#username= username
+                            td#username= student.id_number
                             td= student.first_name
                             td= student.middle_name
                             td= student.last_name
@@ -63,8 +63,8 @@ block body-content
                                       .col-3 Full Name
                                       .col-6.text-dark=student.first_name + ' ' + student.middle_name + ' ' + student.last_name
                                     .row
-                                      .col-3 Nickname
-                                      .col-4.text-dark=student.nickname
+                                      .col-3 Grade Level
+                                      .col-4.text-dark=student.grade_level
                                     .row
                                       .col-3 Birthday
                                       .col-5.text-dark=student.birthday
@@ -121,4 +121,10 @@ block body-content
                                           .row
                                             .col-5 Payment Status
                                             .col-5.text-dark=payment.payment_status
+                                          .row
+                                            .col-5 Paid Amount
+                                            .col-5.text-dark=payment.paid_amount
+                                          .row
+                                            .col-5 Remaining Balance
+                                            .col-5.text-dark=payment.remaining_balance
     +footer
