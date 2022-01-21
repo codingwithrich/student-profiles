@@ -8,7 +8,6 @@ function renderLogin(req, res){
 }
 
 function submitLogin(req, res){
-    console.log("[Submit Login] Request Body:" + req.body);
     const errors = validationResult(req);
 
     if (errors.isEmpty()) { 
