@@ -7,3 +7,6 @@ admin
 
 To publish changes to herokuapp:
 git push heroku main
+
+To login to heroku:
+heroku login
